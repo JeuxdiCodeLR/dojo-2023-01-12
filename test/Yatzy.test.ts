@@ -19,24 +19,24 @@ describe('Yatzy', () => {
 
 describe('Ones', () => {
   it('score the sum of 1s', () => {
-    assert.strictEqual(1, Yatzy.ones(1, 2, 3, 4, 5));
-    assert.strictEqual(2, Yatzy.ones(1, 2, 1, 4, 5));
-    assert.strictEqual(0, Yatzy.ones(6, 2, 2, 4, 5));
-    assert.strictEqual(4, Yatzy.ones(1, 2, 1, 1, 1));
+    assert.strictEqual(1, new Yatzy(1, 2, 3, 4, 5).ones());
+    assert.strictEqual(2, new Yatzy(1, 2, 1, 4, 5).ones());
+    assert.strictEqual(0, new Yatzy(6, 2, 2, 4, 5).ones());
+    assert.strictEqual(4, new Yatzy(1, 2, 1, 1, 1).ones());
   });
 });
 
 describe('Twos', () => {
   it('score the sum of 2s', () => {
-    assert.strictEqual(4, Yatzy.twos(1, 2, 3, 2, 6));
-    assert.strictEqual(10, Yatzy.twos(2, 2, 2, 2, 2));
+    assert.strictEqual(4, new Yatzy(1, 2, 3, 2, 6).twos());
+    assert.strictEqual(10, new Yatzy(2, 2, 2, 2, 2).twos());
   });
 });
 
 describe('Threes', () => {
   it('score the sum of 3s', () => {
-    assert.strictEqual(6, Yatzy.threes(1, 2, 3, 2, 3));
-    assert.strictEqual(12, Yatzy.threes(2, 3, 3, 3, 3));
+    assert.strictEqual(6, new Yatzy(1, 2, 3, 2, 3).threes());
+    assert.strictEqual(12, new Yatzy(2, 3, 3, 3, 3).threes());
   });
 });
 
@@ -97,23 +97,23 @@ describe('Four of a kind', () => {
 
 describe('Small straight', () => {
   it('scores 15', () => {
-    assert.strictEqual(15, Yatzy.smallStraight(1, 2, 3, 4, 5));
-    assert.strictEqual(15, Yatzy.smallStraight(2, 3, 4, 5, 1));
-    assert.strictEqual(0, Yatzy.smallStraight(1, 2, 2, 4, 5));
+    assert.strictEqual(15, new Yatzy(1, 2, 3, 4, 5).smallStraight());
+    assert.strictEqual(15, new Yatzy(2, 3, 4, 5, 1).smallStraight());
+    assert.strictEqual(0, new Yatzy(1, 2, 2, 4, 5).smallStraight());
   });
 });
 
 describe('Large straight', () => {
   it('scores 20', () => {
-    assert.strictEqual(20, Yatzy.largeStraight(6, 2, 3, 4, 5));
-    assert.strictEqual(20, Yatzy.largeStraight(2, 3, 4, 5, 6));
-    assert.strictEqual(0, Yatzy.largeStraight(1, 2, 2, 4, 5));
+    assert.strictEqual(20, new Yatzy(6, 2, 3, 4, 5).largeStraight());
+    assert.strictEqual(20, new Yatzy(2, 3, 4, 5, 6).largeStraight());
+    assert.strictEqual(0, new Yatzy(1, 2, 2, 4, 5).largeStraight());
   });
 });
 
 describe('Full house', () => {
   it('scores the sum of the full house', () => {
-    assert.strictEqual(18, Yatzy.fullHouse(6, 2, 2, 2, 6));
-    assert.strictEqual(0, Yatzy.fullHouse(2, 3, 4, 5, 6));
+    assert.strictEqual(18, new Yatzy(6, 2, 2, 2, 6).fullHouse());
+    assert.strictEqual(0, new Yatzy(2, 3, 4, 5, 6).fullHouse());
   });
 });
